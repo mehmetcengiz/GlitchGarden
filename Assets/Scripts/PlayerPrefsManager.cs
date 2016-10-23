@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class PlayerPrefsManager : MonoBehaviour {
     const string MASTER_VOLUME_KEY = "master_volume";
     const string DIFFICULTY_KEY = "difficulty";
     const string LEVEL_KEY = "level_unlocked_";
@@ -16,8 +16,8 @@ public class NewBehaviourScript : MonoBehaviour {
         }
     }
 
-    public static void GetMasterVolume() {
-        PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
+    public static float GetMasterVolume() {
+        return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
     }
 
     public static void UnlockLevel(int level) {
@@ -43,7 +43,7 @@ public class NewBehaviourScript : MonoBehaviour {
     }
 
     public static void SetDifficulty(float difficulty) {
-        if (difficulty < 0f && difficulty > 1f) {
+        if (difficulty <= 0f && difficulty >= 3f) {
             PlayerPrefs.SetFloat(DIFFICULTY_KEY, difficulty);
         }
         else {
