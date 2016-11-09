@@ -32,7 +32,6 @@ public class Fox : MonoBehaviour {
             anim.SetBool("isAttacking",true);
             attacker.Attack(obj);
         }
-        Debug.Log("Fox collided wih " + collider);
 
     }
 }
