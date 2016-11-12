@@ -4,8 +4,12 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Attacker : MonoBehaviour {
 
-    private GameObject currentTarget;
+
+    [Tooltip("Average Number of seconds between appearances")]
+    public float seenEverySeconds;
+
     private float currentSpeed;
+    private GameObject currentTarget;
     private Animator animator;
 
 	// Use this for initialization
@@ -42,4 +46,5 @@ public class Attacker : MonoBehaviour {
     public void Attack(GameObject obj) {
         currentTarget = obj;
     }
+
 }
