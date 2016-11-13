@@ -3,5 +3,15 @@ using System.Collections;
 
 public class Defender : MonoBehaviour {
 
-    // Only being used as a tag for now!
+    private StarDisplay starDisplay;
+
+    void Start() {
+        starDisplay = GameObject.FindObjectOfType<StarDisplay>();
+    }
+
+    public void AddStars(int amount) {
+        starDisplay.AddStars(amount);
+    }
+
 }
+
